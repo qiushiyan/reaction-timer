@@ -68,11 +68,11 @@
                         this.message = "Slow ... Try Again"
                     }
                 } else if (this.btnHardActive.active) {
-                    if (reactionTime <= 420) {
+                    if (reactionTime <= 500) {
                         this.message = "Ninja Fingers! Try Again"
-                    } else if (reactionTime <= 450) {
+                    } else if (reactionTime <= 600) {
                         this.message = "You are Quick! Try Again"
-                    } else if (reactionTime <= 500) {
+                    } else if (reactionTime <= 800) {
                         this.message = "Not Bad! Try Again"
                     } else {
                         this.message = "Slow ... Try Again"
@@ -134,6 +134,7 @@
         font-family: Kalam, sans-serif;
         min-height: 30vh;
         margin-bottom: 0.5rem;
+        margin-top: 1rem;
     }
     
     h2 {

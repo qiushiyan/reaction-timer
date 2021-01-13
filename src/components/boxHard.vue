@@ -29,9 +29,9 @@
                 this.timerStopped = true
                 this.$emit("boxClicked", this.reactionTime)
             },
-            getRandomPositionStyle() {
-                let x = Math.random() * 100 + "%"
-                let y = Math.random() * 100 + "%"
+            getRandomPositionStyle(max) {
+                let x = Math.random() * max + "%"
+                let y = Math.random() * max + "%"
                 this.boxStyle.left = x
                 this.boxStyle.top = y
             }
@@ -47,7 +47,7 @@
             setTimeout(() => {
                 this.startTimer()
                 this.showBox = true
-                this.getRandomPositionStyle()
+                this.getRandomPositionStyle(95)
                 this.boxStyle.width = this.boxWidth + "px"
                 this.boxStyle.height = this.boxHeight + "px"
                 this.boxStyle.fontSize = (this.boxWidth * this.boxHeight) / 20833 + "rem"
