@@ -4,8 +4,8 @@
     <h3>Click play to start</h3>
     <h3>When the circle appears, click as soon as possible</h3>
     <div class = "box-change" v-if = "!isStarted">
-        <input type="text" placeholder=" box height (px)" v-model = "boxWidth">
-        <input type="text" placeholder=" box width (px)" v-model = "boxHeight">
+        <input type="text" placeholder="target width (px)" v-model = "boxWidth">
+        <input type="text" placeholder="target height (px)" v-model = "boxHeight">
     </div>
     <button :disabled = "isStarted" @click = "start" >
         <p v-show = "reactionTime">{{timeMessage}}</p>
@@ -168,6 +168,7 @@
     input {
         border-radius: 6px;
         transition: 180ms box-shadow ease-in-out;
+        padding: 3px 0 3px 3px
     }
     
     input:focus {
