@@ -1,6 +1,6 @@
 <template>
   <header>
-    <h2>Test your Reaction Time</h2>
+    <h2>Test Your Reaction Time</h2>
     <h3>Click play to start</h3>
     <h3>When the circle appears, click as soon as possible</h3>
     <div class = "box-change" v-if = "!isStarted">
