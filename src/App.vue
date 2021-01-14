@@ -2,14 +2,14 @@
   <header>
     <h2>Test Your Reaction Time</h2>
     <h3>Click play to start</h3>
-    <h3>When the circle appears, click as soon as possible</h3>
+    <h3>When the circle appears, click as soon as possible. Select a target size of your choice!</h3>
     <div class = "box-change" v-if = "!isStarted">
-        <input type="text" placeholder="target width (px)" v-model = "boxWidth">
-        <input type="text" placeholder="target height (px)" v-model = "boxHeight">
+        <input type="number" step = "10" min = "10"  placeholder="target width (px)" v-model = "boxWidth">
+        <input type="number" step  = "10" min = "10" placeholder="target height (px)" v-model = "boxHeight">
     </div>
     <button :disabled = "isStarted" @click = "start" >
         <p v-show = "reactionTime">{{timeMessage}}</p>
-        <p>{{message}}</p>
+        <p v-show = "(!isStarted) || (round === 1)">{{message}}</p>
     </button>
 
   </header>
@@ -166,9 +166,13 @@
     }
     
     input {
-        border-radius: 6px;
+        border: none;
+        background: #e4f1e1;
+        border-radius: 2px;
+        border-bottom: 3px solid teal;
         transition: 180ms box-shadow ease-in-out;
-        padding: 3px 0 3px 3px
+        padding: 6px 3px;
+        color: #555;
     }
     
     input:focus {
