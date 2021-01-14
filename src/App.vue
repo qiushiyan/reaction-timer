@@ -1,11 +1,12 @@
 <template>
+  <github-link></github-link>
   <header>
     <h2>Test Your Reaction Time</h2>
     <h3>Click play to start</h3>
     <h3>When the circle appears, click as soon as possible. Select a target size of your choice!</h3>
-    <div class = "box-change" v-if = "!isStarted">
-        <input type="number" step = "10" min = "10"  placeholder="target width (px)" v-model = "boxWidth">
-        <input type="number" step  = "10" min = "10" placeholder="target height (px)" v-model = "boxHeight">
+    <div class = "circle-change" v-if = "!isStarted">
+        <input type="number" step = "10" min = "10"  placeholder="target width (px)" v-model = "circleWidth">
+        <input type="number" step  = "10" min = "10" placeholder="target height (px)" v-model = "circleHeight">
     </div>
     <button :disabled = "isStarted" @click = "start" >
         <p v-show = "reactionTime">{{timeMessage}}</p>
@@ -17,18 +18,20 @@
     <button v-if = "!isStarted" class = "btn-easy pop-on-hover" :class = "btnEasyActive" @click = "swtichActiveBtn" >easy</button>
     <button v-if = "!isStarted" class = "btn-hard pop-on-hover" :class = "btnHardActive" @click = "swtichActiveBtn" >hard</button>
   </div>
-  <box-easy v-if = "isStarted && btnEasyActive.active" :delay = "delay" @boxClicked = "reset" :boxWidth = "boxWidth ? boxWidth : 120" :boxHeight = "boxHeight ? boxHeight : 120"></box-easy>
-  <box-hard v-if = "isStarted && btnHardActive.active" :delay = "delay" @boxClicked = "reset" :boxWidth = "boxWidth ? boxWidth : 60" :boxHeight = "boxHeight ? boxHeight : 60"></box-hard>
+  <circle-easy v-if = "isStarted && btnEasyActive.active" :delay = "delay" @circleClicked = "reset" :circleWidth = "circleWidth ? circleWidth : 120" :circleHeight = "circleHeight ? circleHeight : 120"></circle-easy>
+  <circle-hard v-if = "isStarted && btnHardActive.active" :delay = "delay" @circleClicked = "reset" :circleWidth = "circleWidth ? circleWidth : 60" :circleHeight = "circleHeight ? circleHeight : 60"></circle-hard>
 </template>
 
 <script>
-    import boxEasy from "./components/boxEasy.vue"
-    import boxHard from "./components/boxHard.vue"
+    import CircleEasy from "./components/CircleEasy.vue"
+    import CircleHard from "./components/CircleHard.vue"
+    import GitHubLink from "./components/GithubLink.vue"
 
     export default {
         components: {
-            "box-easy": boxEasy,
-            "box-hard": boxHard
+            "circle-easy": CircleEasy,
+            "circle-hard": CircleHard,
+            "github-link": GitHubLink
         },
         data() {
             return {
@@ -43,14 +46,14 @@
                 "btnHardActive": {
                     active: false
                 },
-                boxWidth: null,
-                boxHeight: null,
+                circleWidth: null,
+                circleHeight: null,
             }
         },
         methods: {
             start() {
                 this.isStarted = true
-                this.boxShown = true
+                this.circleShown = true
                 this.delay = 200 + Math.random() * 9800
                 this.round += 1
             },
@@ -102,7 +105,7 @@
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Kalam&display=swap');
      :root {
-        box-sizing: border-box;
+        box-sizing: border-circle;
         background-color: #e4f1e1;
         margin: 0;
         padding: 0;
@@ -151,17 +154,17 @@
         margin-bottom: 0.5rem;
     }
     
-    .box-change {
+    .circle-change {
         display: flex;
         align-items: center;
         margin-bottom: 1rem;
     }
     
-    .box-change {
+    .circle-change {
         display: block
     }
     
-    .box-change>*+* {
+    .circle-change>*+* {
         margin-left: 2rem;
     }
     
@@ -170,7 +173,7 @@
         background: #e4f1e1;
         border-radius: 2px;
         border-bottom: 3px solid teal;
-        transition: 180ms box-shadow ease-in-out;
+        transition: 180ms circle-shadow ease-in-out;
         padding: 6px 3px;
         color: #555;
     }
