@@ -45,7 +45,7 @@
                 this.waitPlay = false
                     // if the user keeps playing the hard mode
                 if (this.mode === "hard") {
-                    this.getRandomPositionStyle(95)
+                    this.getRandomPositionStyle(90)
                 }
             },
             reset(reactionTime) {
@@ -65,7 +65,7 @@
                 this.mode = mode
                     // hard mode
                 if (this.mode === "hard") {
-                    this.getRandomPositionStyle(95)
+                    this.getRandomPositionStyle(90)
                         // easy mode, clear hard mode setting
                 } else {
                     this.circleStyle.left = null
@@ -76,7 +76,7 @@
             },
             updateSize(circleWidth, circleHeight) {
                 if (this.mode === "hard" && this.round === 0) {
-                    this.getRandomPositionStyle(95)
+                    this.getRandomPositionStyle(90)
                 }
                 this.circleStyle.width = circleWidth + "px"
                 this.circleStyle.height = circleHeight + "px"
@@ -110,44 +110,5 @@
     
     *:focus {
         outline: none;
-    }
-    
-    .play-btn {
-        text-align: center;
-    }
-    
-    @-webkit-keyframes pop-on-hover {
-        50% {
-            -webkit-transform: scale(1.2);
-            transform: scale(1.2);
-        }
-    }
-    
-    @keyframes pop-on-hover {
-        50% {
-            -webkit-transform: scale(1.2);
-            transform: scale(1.2);
-        }
-    }
-    
-    .pop-on-hover {
-        display: inline-block;
-        vertical-align: middle;
-        -webkit-transform: perspective(1px) translateZ(0);
-        transform: perspective(1px) translateZ(0);
-        box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-    }
-    
-    .pop-on-hover:hover,
-    .pop-on-hover:focus,
-    .pop-on-hover:active {
-        -webkit-animation-name: pop-on-hover;
-        animation-name: pop-on-hover;
-        -webkit-animation-duration: 0.3s;
-        animation-duration: 0.3s;
-        -webkit-animation-timing-function: linear;
-        animation-timing-function: linear;
-        -webkit-animation-iteration-count: 1;
-        animation-iteration-count: 1;
     }
 </style>

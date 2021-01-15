@@ -88,6 +88,7 @@
         align-items: center;
         margin-top: 0.5rem;
         flex-direction: column;
+        text-align: center;
     }
     
     .buttonList>*+* {
@@ -102,5 +103,40 @@
     
     .mode-btn>*+* {
         margin-left: 2rem;
+    }
+    
+    .pop-on-hover {
+        display: inline-block;
+        vertical-align: middle;
+        -webkit-transform: perspective(1px) translateZ(0);
+        transform: perspective(1px) translateZ(0);
+        box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    }
+    
+    .pop-on-hover:hover,
+    .pop-on-hover:focus,
+    .pop-on-hover:active {
+        -webkit-animation-name: pop-on-hover;
+        animation-name: pop-on-hover;
+        -webkit-animation-duration: 0.3s;
+        animation-duration: 0.3s;
+        -webkit-animation-timing-function: linear;
+        animation-timing-function: linear;
+        -webkit-animation-iteration-count: 1;
+        animation-iteration-count: 1;
+    }
+    
+    @-webkit-keyframes pop-on-hover {
+        50% {
+            -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+        }
+    }
+    
+    @keyframes pop-on-hover {
+        50% {
+            -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+        }
     }
 </style>
