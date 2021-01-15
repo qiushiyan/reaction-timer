@@ -1,8 +1,11 @@
 <template>
     <div class="buttonList">
+        <!--Hide play button during first time loading, show when first circle appear -->
         <div class = "play-btn" v-if = "round !== 1 || reactionTime">
             <base-button :isDisabled = "isStarted" @click = "start" >
+                <!--  display 'Play' when entering the page, return last reaction time after first play-->
                 <p v-show = "reactionTime || round === 0">{{timeMessage}}</p>
+                <!-- display comments after resetting, hidden when waiting for the circle-->
                 <p v-show = "reactionTime && waitPlay">{{message}}</p>
             </base-button>
         </div>

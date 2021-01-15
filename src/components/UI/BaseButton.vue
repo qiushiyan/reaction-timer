@@ -1,9 +1,8 @@
 <template>
-        <button :disabled = "isDisabled" :class = "classProp">
-            <slot></slot>
-        </button>
+    <button :disabled = "isDisabled" :class = "classProp">
+        <slot></slot>
+    </button>
 </template>
-
 
 <script>
     export default {

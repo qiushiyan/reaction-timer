@@ -43,6 +43,7 @@
                 this.delay = 200 + Math.random() * 9800
                 this.round += 1
                 this.waitPlay = false
+                    // if the user keeps playing the hard mode
                 if (this.mode === "hard") {
                     this.getRandomPositionStyle(95)
                 }
@@ -60,14 +61,21 @@
             },
             updateCircleStyle(mode) {
                 this.mode = mode
+                    // hard mode
                 if (this.mode === "hard") {
                     this.getRandomPositionStyle(95)
                     this.circleStyle.position = "absolute"
                     this.circleStyle.margin = "0"
+                        // easy mode
+                } else {
+                    this.circleStyle.margin = "30px auto"
+                    this.circleStyle.left = null
+                    this.circleStyle.top = null
+                    this.circleStyle.position = null
                 }
             },
             updateSize(circleWidth, circleHeight) {
-                if (this.mode === "hard") {
+                if (this.mode === "hard" && this.round === 0) {
                     this.getRandomPositionStyle(95)
                     this.circleStyle.position = "absolute"
                     this.circleStyle.margin = "0"

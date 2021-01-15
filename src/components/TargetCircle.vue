@@ -15,7 +15,6 @@
                 timerStopped: false,
             }
         },
-
         methods: {
             startTimer() {
                 this.timer = setInterval(() => {
