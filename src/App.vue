@@ -12,8 +12,6 @@
     import TargetCircle from "./components/TargetCircle.vue"
     import InputSize from "./components/InputSize.vue"
 
-
-
     export default {
         components: {
             "github-link": GitHubLink,
@@ -60,7 +58,6 @@
                 this.circleStyle.left = x
                 this.circleStyle.top = y
             },
-
             updateCircleStyle(mode) {
                 this.mode = mode
                 if (this.mode === "hard") {
