@@ -58,27 +58,25 @@
                 let y = Math.random() * max + "%"
                 this.circleStyle.left = x
                 this.circleStyle.top = y
+                this.circleStyle.position = "absolute"
+                this.circleStyle.margin = "0"
             },
             updateCircleStyle(mode) {
                 this.mode = mode
                     // hard mode
                 if (this.mode === "hard") {
                     this.getRandomPositionStyle(95)
-                    this.circleStyle.position = "absolute"
-                    this.circleStyle.margin = "0"
-                        // easy mode
+                        // easy mode, clear hard mode setting
                 } else {
-                    this.circleStyle.margin = "30px auto"
                     this.circleStyle.left = null
                     this.circleStyle.top = null
                     this.circleStyle.position = null
+                    this.circleStyle.margin = "30px auto"
                 }
             },
             updateSize(circleWidth, circleHeight) {
                 if (this.mode === "hard" && this.round === 0) {
                     this.getRandomPositionStyle(95)
-                    this.circleStyle.position = "absolute"
-                    this.circleStyle.margin = "0"
                 }
                 this.circleStyle.width = circleWidth + "px"
                 this.circleStyle.height = circleHeight + "px"

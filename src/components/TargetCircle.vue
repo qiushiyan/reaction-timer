@@ -42,7 +42,6 @@
         border-radius: 50%;
         background: #3b738f;
         text-align: center;
-        margin: 30px auto;
         display: flex;
         justify-content: center;
         align-items: center;
