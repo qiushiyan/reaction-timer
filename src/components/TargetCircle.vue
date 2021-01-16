@@ -28,6 +28,7 @@
             }
         },
         mounted() {
+            // after certain delay, circle appear and start counting
             setTimeout(() => {
                 this.showcircle = true
                 this.startTimer()
