@@ -3,7 +3,7 @@ A simple yet fun app testing your reaction time 🕥, built with Vue, deployed w
 
 
 <a href = "https://test-your-reaction.web.app/" style="display: block; text-align:center">
-  <img src="https://qiushi.rbind.io/project/reaction-timer/featured_hudb2fc5e85c10db3c625054073b6cf37e_31949_720x0_resize_lanczos_2.png">
+  <img src="https://qiushi.rbind.io/project/reaction-timer/featured_hub15b733d044dbeffe3060a11a359ffc0_46776_720x0_resize_q90_lanczos.jpg">
 </a>
 
 
