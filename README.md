@@ -8,24 +8,14 @@ A simple yet fun app testing your reaction time 🕥, built with Vue, deployed w
 
 
 ## Project setup
+
+To install dependencies
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+to preview locally 
+
 ```
 npm run serve
 ```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
